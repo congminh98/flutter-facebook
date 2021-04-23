@@ -12,8 +12,10 @@ class CreatePostContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
       color: Colors.orange,
+      child: Column(
+        children: [],
+      ),
     );
   }
 }
