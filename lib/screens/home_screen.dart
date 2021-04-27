@@ -1,8 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook/config/palette.dart';
 import 'package:flutter_facebook/data/data.dart';
+import 'package:flutter_facebook/models/models.dart';
 import 'package:flutter_facebook/widget/circle_button.dart';
 import 'package:flutter_facebook/widget/create_post_container.dart';
+import 'package:flutter_facebook/widget/rooms.dart';
+import 'package:flutter_facebook/widget/stories.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,6 +38,21 @@ class HomeScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: CreatePostContainer(currentUser: currentUser),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 10, bottom: 5),
+            sliver: SliverToBoxAdapter(
+              child: Rooms(onlineUsers: onlineUsers),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 10, bottom: 5),
+            sliver: SliverToBoxAdapter(
+              child: Stories(
+                currentUser: currentUser,
+                stories: stories,
+              ),
+            ),
           ),
         ],
       ),
