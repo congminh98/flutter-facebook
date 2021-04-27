@@ -1,10 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook/config/palette.dart';
 import 'package:flutter_facebook/data/data.dart';
 import 'package:flutter_facebook/models/models.dart';
+import 'package:flutter_facebook/screens/post_container.dart';
 import 'package:flutter_facebook/widget/circle_button.dart';
 import 'package:flutter_facebook/widget/create_post_container.dart';
+import 'package:flutter_facebook/widget/profile_avatar.dart';
 import 'package:flutter_facebook/widget/rooms.dart';
 import 'package:flutter_facebook/widget/stories.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -54,6 +55,15 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final Post post = posts[index];
+                return PostContainer(post: post);
+              },
+              childCount: posts.length,
+            ),
+          )
         ],
       ),
     );
