@@ -5,7 +5,6 @@ import 'package:flutter_facebook/models/models.dart';
 import 'package:flutter_facebook/screens/post_container.dart';
 import 'package:flutter_facebook/widget/circle_button.dart';
 import 'package:flutter_facebook/widget/create_post_container.dart';
-import 'package:flutter_facebook/widget/profile_avatar.dart';
 import 'package:flutter_facebook/widget/rooms.dart';
 import 'package:flutter_facebook/widget/stories.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
