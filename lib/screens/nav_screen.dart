@@ -41,7 +41,7 @@ class __NavScreenState extends State<NavScreen> {
                 preferredSize: Size(screenSize.width, 100),
                 child: CustomAppBar(
                   currentUser: currentUser,
-                  // icon: Icons.share,
+                  icon: _icons,
                   selectedIndex: _selectedIndex,
                   onTap: (index) => setState(() => _selectedIndex = index),
                 ),
@@ -72,22 +72,31 @@ class CustomTabBar extends StatelessWidget {
     this.icons,
     this.selectedIndex,
     this.onTap,
+    this.isBottomIndicator = false,
   }) : super(key: key);
   final List<IconData> icons;
   final int selectedIndex;
   final Function(int) onTap;
+  final bool isBottomIndicator;
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
       indicatorPadding: EdgeInsets.zero,
       indicator: BoxDecoration(
-        border: Border(
-          top: BorderSide(
-            color: Palette.facebookBlue,
-            width: 3,
-          ),
-        ),
+        border: isBottomIndicator
+            ? Border(
+                bottom: BorderSide(
+                  color: Palette.facebookBlue,
+                  width: 3,
+                ),
+              )
+            : Border(
+                top: BorderSide(
+                  color: Palette.facebookBlue,
+                  width: 3,
+                ),
+              ),
       ),
       tabs: icons
           .asMap()

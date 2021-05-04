@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook/screens/home_screen.dart';
 import 'package:flutter_facebook/screens/nav_screen.dart';
 
 void main() {
